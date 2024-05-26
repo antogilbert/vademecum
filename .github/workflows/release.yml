@@ -37,10 +37,6 @@ jobs:
           # args: # optional, default is -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
           # Install extra packages by apt-get
           # extra_system_packages: # optional
-      - name: Upload document
-        uses: actions/upload-artifact@v4
-        with:
-          name: vademecum.pdf
-          path: ./latino.pdf
+     
       - name: Publish Release
-        run: gh release create stable --target $GITHUB_SHA ./latino.pdf ./vademecum.pdf
+        run: gh release create stable --target $GITHUB_SHA ./latino.pdf
